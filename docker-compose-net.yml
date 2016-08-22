@@ -1,0 +1,26 @@
+pptpd:
+  image: vimagick/pptpd
+  volumes:
+    - ./conf/pptpd.conf:/etc/pptpd.conf
+    - ./conf/pptpd-options:/etc/ppp/pptpd-options
+    - ./conf/chap-secrets:/etc/ppp/chap-secrets
+  privileged: yes
+  # ports:
+  #   - "1723:1723"
+  restart: always
+
+# shadowsocks:
+#   image: vimagick/shadowsocks-libev
+#   ports:
+#     - "8388:8388"
+#   environment:
+#     - METHOD=chacha20
+#     - PASSWORD=secret
+#   restart: always
+
+# client:
+#   image: vimagick/shadowsocks-libev
+#   command: ss-local -s foobar.site -p 8388 -b 0.0.0.0 -l 1080 -k secret -m chacha20
+#   ports:
+#     - "1080:1080"
+  # restart: always

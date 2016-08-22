@@ -1,0 +1,6 @@
+cloud9:
+  image: sapk/cloud9
+  ports:
+    - "8181:8181"
+  volumes:
+    - ./www/7ghost:/workspace
