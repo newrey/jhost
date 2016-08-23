@@ -5,9 +5,8 @@ pptpd:
     - ./conf/pptpd-options:/etc/ppp/pptpd-options
     - ./conf/chap-secrets:/etc/ppp/chap-secrets
   privileged: yes
-  # ports:
-  #   - "1723:1723"
-  restart: always
+  net: "host"
+  # restart: always
 
 # shadowsocks:
 #   image: vimagick/shadowsocks-libev
